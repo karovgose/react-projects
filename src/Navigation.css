@@ -1,0 +1,50 @@
+.navigation {
+  padding: 1rem 0;
+}
+
+.navigation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation-item {
+  margin-right: 20px;
+  position: relative;
+}
+
+.navigation-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 1.6rem;
+  transition: color 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.navigation-link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-bg);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.navigation-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.navigation-link:hover {
+  color: var(--accent-bg);
+}

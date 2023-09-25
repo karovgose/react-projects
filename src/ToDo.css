@@ -1,0 +1,96 @@
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40rem;
+  min-height: 60rem;
+  background: var(--primary-bg);
+  text-align: center;
+  margin: 6rem auto;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  margin: 2rem 0;
+  color: var(--accent-bg);
+  font-size: 2.4rem;
+}
+
+.todo-form {
+  gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 1.6rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid var(--accent-bg);
+  outline: none;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.todo-input:focus {
+  border-color: var(--secondary-bg);
+  border: none;
+  box-shadow: 0 0 1rem rgba(247, 200, 67, 0.7);
+}
+
+.todo-button {
+  padding: 1.6rem 2.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.6rem;
+  background: var(--accent-bg);
+  color: var(--text-color);
+  text-transform: capitalize;
+  transition: background 0.3s ease;
+}
+
+.todo-button:hover {
+  background: #ffad00;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.todo-row {
+  width: 100%;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  background: var(--secondary-bg);
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+.todo-row:last-child {
+  margin-bottom: 0;
+}
+
+.delete-icon {
+  margin-right: 0.5rem;
+  color: var(--accent-bg);
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.delete-icon:hover {
+  transform: scale(1.1);
+}
