@@ -94,3 +94,31 @@ h1 {
 .delete-icon:hover {
   transform: scale(1.1);
 }
+
+@media screen and (max-width: 768px) {
+  .todo-app {
+    margin: 3rem auto;
+    padding: 1rem;
+    min-height: auto;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .todo-input {
+    padding: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .todo-button {
+    padding: 1.2rem 1.8rem;
+    font-size: 1.4rem;
+  }
+
+  .todo-row {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
