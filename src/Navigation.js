@@ -22,6 +22,11 @@ function Navigation() {
             Post List
           </Link>
         </li>
+        <li className="navigation-item">
+          <Link to="/CurrencyConverter" className="navigation-link">
+            Currency Convertor
+          </Link>
+        </li>
       </ul>
     </nav>
   );

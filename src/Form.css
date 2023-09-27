@@ -53,7 +53,7 @@
 }
 
 .form-button:hover {
-  background-color: #ffad00;
+  background-color: #008fb3;
 }
 
 .displayed-value {
@@ -105,7 +105,7 @@
 }
 
 .log-in-message button.form-button:hover {
-  background-color: #f9d97b;
+  background-color: #008fb3;
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }

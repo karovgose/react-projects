@@ -4,6 +4,7 @@ import PostList from "./PostList";
 import ToDo from "./ToDo";
 import "./App.css";
 import Form from "./Form";
+import CurrencyConverter from "./CurrencyConvertor";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/Counter" element={<Counter />} />
           <Route path="/Todo" element={<ToDo />} />
           <Route path="/PostList" element={<PostList />} />
+          <Route path="/CurrencyConverter" element={<CurrencyConverter />} />
         </Routes>
       </div>
     </Router>

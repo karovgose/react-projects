@@ -1,9 +1,8 @@
 :root {
-  --primary-bg: #0c1b41;
-  --secondary-bg: #0d2c5b;
-  --accent-bg: #f7c843;
+  --primary-bg: #050505;
+  --secondary-bg: #111133;
+  --accent-bg: #00ccff;
   --text-color: #ffffff;
-  --font-family: "Roboto", sans-serif;
 }
 
 html {

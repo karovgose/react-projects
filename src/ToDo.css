@@ -40,7 +40,7 @@ h1 {
 .todo-input:focus {
   border-color: var(--secondary-bg);
   border: none;
-  box-shadow: 0 0 1rem rgba(247, 200, 67, 0.7);
+  box-shadow: 0 0 1rem rgba(0, 143, 179, 0.7);
 }
 
 .todo-button {
@@ -57,7 +57,7 @@ h1 {
 }
 
 .todo-button:hover {
-  background: #ffad00;
+  background: #008fb3;
 }
 
 .todo-container {
