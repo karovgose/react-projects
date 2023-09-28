@@ -1,9 +1,9 @@
 :root {
-  --primary-bg: #f0f6fc;
+  --primary-bg: #f2f2f2;
   --secondary-bg: #ffffff;
-  --accent-bg: #36a0e4;
+  --accent-bg: #007acc;
   --text-color: #333333;
-  --button-hover: #007acc;
+  --button-hover: #005999;
 }
 
 html {
