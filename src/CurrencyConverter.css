@@ -52,6 +52,7 @@ h1 {
 
 .currency-select {
   background: var(--primary-bg);
+  border-radius: 0.5rem;
   color: var(--accent-bg);
 }
 
