@@ -73,7 +73,7 @@
 }
 
 .load-more-button:hover {
-  background: #008fb3;
+  background: var(--button-hover);
   transform: scale(1.05);
 }
 

@@ -57,7 +57,7 @@ h1 {
 }
 
 .todo-button:hover {
-  background: #008fb3;
+  background: var(--button-hover);
 }
 
 .todo-container {
