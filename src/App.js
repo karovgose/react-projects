@@ -15,7 +15,11 @@ function App() {
       <Form onLogin={setIsLoggedIn} />
       <div>
         <Routes>
-          {isLoggedIn && <Route path="/Counter" element={<Counter />} />}
+          {isLoggedIn ? (
+            <Route path="/" element={<Counter />} />
+          ) : (
+            <Route path="/" element={<div>Not Logged In</div>} />
+          )}
           <Route path="/Todo" element={<ToDo />} />
           <Route path="/PostList" element={<PostList />} />
           <Route path="/CurrencyConverter" element={<CurrencyConverter />} />
