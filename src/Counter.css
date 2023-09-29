@@ -29,6 +29,7 @@
 
 .counter-button:hover {
   background-color: var(--button-hover);
+
   transform: scale(1.05);
   box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
 }

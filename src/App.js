@@ -16,6 +16,7 @@ function App() {
           <Route path="/Todo" element={<ToDo />} />
           <Route path="/PostList" element={<PostList />} />
           <Route path="/CurrencyConverter" element={<CurrencyConverter />} />
+          <Route path="" element={<Counter />} />{" "}
         </Routes>
       </div>
     </Router>

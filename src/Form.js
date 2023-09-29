@@ -14,7 +14,8 @@ function Form() {
   const [password, setPassword] = useState("");
   const [loggedInUser, setLoggedInUser] = useState(null);
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     const user = users.find(
       (user) => user.username === userName && user.password === password
     );
@@ -35,53 +36,67 @@ function Form() {
   };
 
   return (
-    <div className={loggedInUser ? "" : "form-container"}>
-      {loggedInUser ? (
-        <div className="nav-wraper">
-          <Navigation />
-          <div className="log-in-message">
-            <>{loggedInUser.name}</>
-            <button
-              className="form-button"
-              type="submit"
-              onClick={handleLogOut}
-            >
-              Log out
-            </button>
+    <>
+      <div className="welcome-container">
+        <h1 className="welcome-message">
+          {loggedInUser
+            ? `Welcome, ${loggedInUser.name}! You are logged in.`
+            : "Welcome to My React Project"}
+        </h1>
+        {!loggedInUser && (
+          <p className="subtext">
+            Please sign in to access the full experience.
+          </p>
+        )}
+      </div>
+      <div className={loggedInUser ? "" : "form-container"}>
+        {loggedInUser ? (
+          <div className="nav-wraper">
+            <Navigation />
+            <div className="log-in-message">
+              <>{loggedInUser.name}</>
+              <button
+                className="form-button"
+                type="submit"
+                onClick={handleLogOut}
+              >
+                Log out
+              </button>
+            </div>
           </div>
-        </div>
-      ) : (
-        <div className="form-wrapper">
-          <form className="form" onSubmit={handleLogin}>
-            <label htmlFor="user-name" className="form-label">
-              User Name:
-            </label>
-            <input
-              id="user-name"
-              className="form-input"
-              type="text"
-              placeholder="User Name"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-            />
-            <label htmlFor="password" className="form-label">
-              Password:
-            </label>
-            <input
-              id="password"
-              className="form-input"
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button className="form-button" type="submit">
-              Log in
-            </button>
-          </form>
-        </div>
-      )}
-    </div>
+        ) : (
+          <div className="form-wrapper">
+            <form className="form" onSubmit={handleLogin}>
+              <label htmlFor="user-name" className="form-label">
+                User Name:
+              </label>
+              <input
+                id="user-name"
+                className="form-input"
+                type="text"
+                placeholder="User Name"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+              />
+              <label htmlFor="password" className="form-label">
+                Password:
+              </label>
+              <input
+                id="password"
+                className="form-input"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button className="form-button" type="submit">
+                Log in
+              </button>
+            </form>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 
