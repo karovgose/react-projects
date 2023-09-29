@@ -9,7 +9,7 @@ const users = [
   { id: 4, username: "martin", password: "789", name: "Martin" },
 ];
 
-function Form() {
+function Form({ onLogin }) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -22,6 +22,7 @@ function Form() {
 
     if (user) {
       setLoggedInUser(user);
+      onLogin(true);
     } else {
       alert("Invalid credentials. Try again!");
       setUserName("");
@@ -33,6 +34,7 @@ function Form() {
     setLoggedInUser(null);
     setUserName("");
     setPassword("");
+    onLogin(false);
   };
 
   return (
