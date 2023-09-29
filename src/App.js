@@ -12,13 +12,17 @@ function App() {
 
   return (
     <Router>
-      <Form onLogin={setIsLoggedIn} />
       <div>
+        <Form onLogin={setIsLoggedIn} />
+
         <Routes>
           {isLoggedIn ? (
             <Route path="/" element={<Counter />} />
           ) : (
-            <Route path="/" element={<div>Not Logged In</div>} />
+            <Route
+              path="/"
+              element={<div className="not-logged-in-text">Not Logged In</div>}
+            />
           )}
           <Route path="/Todo" element={<ToDo />} />
           <Route path="/PostList" element={<PostList />} />

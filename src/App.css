@@ -25,3 +25,11 @@ body {
   );
   font-size: 1.6rem;
 }
+
+.not-logged-in-text {
+  font-size: 1.5rem;
+  color: var(--primary-bg);
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--accent-bg);
+}

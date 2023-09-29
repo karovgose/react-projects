@@ -102,6 +102,7 @@
 @media screen and (max-width: 768px) {
   .toggle-button {
     display: block;
+    position: sticky;
     order: 1;
     position: relative;
     z-index: 2;
