@@ -10,9 +10,8 @@ export default function CurrencyConverter() {
   const [converted, setConverted] = useState(null);
   const [currencyOptions, setCurrencyOptions] = useState([]);
 
-  const controller = new AbortController(); // Create an AbortController instance
+  const controller = new AbortController();
 
-  // Define an async function to fetch exchange rates
   const fetchExchangeRates = async () => {
     try {
       const response = await fetch(
