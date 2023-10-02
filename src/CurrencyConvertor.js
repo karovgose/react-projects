@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./CurrencyConverter.css";
+import { AbortController } from "abort-controller";
 
 export default function CurrencyConverter() {
   const [amount, setAmount] = useState(1);
@@ -9,18 +10,41 @@ export default function CurrencyConverter() {
   const [converted, setConverted] = useState(null);
   const [currencyOptions, setCurrencyOptions] = useState([]);
 
-  useEffect(() => {
-    fetch(
-      `https://v6.exchangerate-api.com/v6/0370c9cde9c0ae5fd42c2a82/latest/${fromCur}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setExchangeRates(data.conversion_rates);
+  const controller = new AbortController(); // Create an AbortController instance
 
-        // Extract currency options from the API response
-        const options = Object.keys(data.conversion_rates);
-        setCurrencyOptions(options);
-      });
+  // Define an async function to fetch exchange rates
+  const fetchExchangeRates = async () => {
+    try {
+      const response = await fetch(
+        `https://v6.exchangerate-api.com/v6/0370c9cde9c0ae5fd42c2a82/latest/${fromCur}`,
+        {
+          signal: controller.signal,
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch exchange rates.");
+      }
+
+      const data = await response.json();
+      setExchangeRates(data.conversion_rates);
+
+      const options = Object.keys(data.conversion_rates);
+      setCurrencyOptions(options);
+    } catch (error) {
+      if (error.name === "AbortError") {
+        console.log("Fetch request aborted.");
+      } else {
+        console.error("Error fetching exchange rates:", error);
+      }
+    }
+  };
+
+  useEffect(() => {
+    setExchangeRates(null);
+    setCurrencyOptions([]);
+
+    fetchExchangeRates();
   }, [fromCur]);
 
   useEffect(() => {
@@ -30,6 +54,12 @@ export default function CurrencyConverter() {
       setConverted(result.toFixed(2));
     }
   }, [amount, fromCur, toCur, exchangeRates]);
+
+  useEffect(() => {
+    return () => {
+      controller.abort();
+    };
+  }, []);
 
   return (
     <div className="currency-converter">
